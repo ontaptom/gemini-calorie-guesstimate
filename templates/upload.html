@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gemini Calorie Guesstimate</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #0d1117;
+            color: #E0E0E0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .logo {
+            max-width: 300px;
+            margin-bottom: 20px;
+        }
+        .instruction-text {
+            font-size: 18px;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+        .upload-btn-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+        }
+        .btn {
+            border: 2px solid #FF6B6B;
+            color: #FF6B6B;
+            background-color: transparent;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #FF6B6B;
+            color: #0d1117;
+        }
+        .upload-btn-wrapper input[type=file] {
+            font-size: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+        #loading {
+            display: none;
+            margin-top: 20px;
+            color: #FF6B6B;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="{{ url_for('static', filename='app-logo.png') }}" alt="Gemini Calorie Guesstimate" class="logo">
+        <p class="instruction-text">
+            Snap a photo of your food and let AI estimate the calories for you!
+        </p>
+        <form id="uploadForm" method="post" enctype="multipart/form-data">
+            <div class="upload-btn-wrapper">
+                <button class="btn">Choose Image</button>
+                <input type="file" name="file" accept="image/*" capture="environment" id="fileInput">
+            </div>
+        </form>
+        <div id="loading">
+            <p>Analyzing your food... Please wait.</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('fileInput').addEventListener('change', function() {
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('uploadForm').submit();
+        });
+    </script>
+</body>
+</html>
