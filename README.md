@@ -6,13 +6,14 @@
 
 ## About
 
-Gemini Calorie Guesstimate is an #BuildWithGemini educational project that uses Google's Gemini AI model to estimate calories in food from photos. Simply snap a picture of your meal, and let AI do the guesswork for you!
+Gemini Calorie Guesstimate is an **#BuiltWithGemini** educational project that uses Google's Gemini AI model to estimate calories in food from photos. Simply snap a picture of your meal, and let AI do the guesswork for you!
 
 This project serves as a demonstration of integrating Google's Vertex AI with a Flask web application, providing a user-friendly interface for AI-powered food analysis.
 
 ## Educational Purpose
 
 This project is intended for educational purposes, showcasing:
+- Building Application with Gemini in Vertex AI
 - Integration of Google Cloud Vertex AI
 - Building a responsive web application with Flask
 - Handling file uploads and image processing
@@ -49,7 +50,7 @@ pip install -r requirements.txt
 python app.py
 ```
 
-Make sure that user (or service account) running the application have sufficient permissions to call "Gemini-1.5-Flash-002" model. Example role `roles/aiplatform.user` you might try for your PoC. But long term about the 'least privilege' approach! ;)  
+Make sure that user (or service account) running the application have sufficient permissions to call "Gemini-1.5-Flash-002" model. You might use role `roles/aiplatform.user` for your PoC. But long term - always have in mind the 'least privilege' approach when assigning permissions! ;)  
 
 ### Docker Deployment
 
@@ -83,21 +84,7 @@ docker run -p 8080:8080 gemini-calorie-guesstimate
 
 ## License
 
-This project is licensed under the Apache License 2.0 - see below for details:
-
-```
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-```
+This project is licensed under the Apache License 2.0 - check out the LICENSE file for details.
 
 ## Customization
 
@@ -109,4 +96,4 @@ Feel free to fork this repository and modify the code to suit your needs. Some i
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome! Please feel free to submit a Pull Request. Or fork the repo and work on your own copy! Happy coding! ;)
